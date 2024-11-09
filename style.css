@@ -231,7 +231,7 @@ section{
 }
 
 
-.btn-box a.btn{
+.btn-box .btn{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -252,11 +252,11 @@ section{
 
 }
 
-a.btn:hover{
+.btn:hover{
     color: var(--hover-color);
 }
 
-a.btn::before{
+.btn::before{
     content: "";
     position: absolute;
     top: 0;
@@ -268,20 +268,20 @@ a.btn::before{
     transition: .4s;
 }
 
-a.btn:hover::before{
+.btn:hover::before{
     width: 100%;
 }
 
-a.btn:nth-child(2){
+.btn:nth-child(2){
     background: var(--bg-color);
     color: var(--hover-color);
 }
 
-a.btn:nth-child(2):hover{
+.btn:nth-child(2):hover{
     color: var(--bg-color);
 }
 
-a.btn:nth-child(2)::before{
+.btn:nth-child(2)::before{
     background: var(--hover-color);
 }
 
@@ -798,6 +798,111 @@ a.btn:nth-child(2)::before{
 }
 
 
+/* Contact Section */
+    .contact{
+        background-color: var(--secon-bg-color);
+        width: 100%;
+    }
+
+    .contact form{
+        text-align: center;
+        max-width: 50rem;
+        margin: 1rem auto;
+        margin-bottom: 3rem;
+    }
+
+    .contact form input, .contact form textarea, .contact form select{
+        width: 100%;
+        color: var(--text-color);
+        background: var(--bg-color);
+        margin-bottom: .8rem;
+        border: none;
+        border-radius: 5px;
+        padding: .7rem;
+    }
+
+    .contact form .radioCheckbox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: .2rem;
+    }
+
+    .contact form .radioCheckbox .checkboxes{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        background: var(--bg-color);
+        margin-bottom: .8rem;
+        border: none;
+        border-radius: 5px;
+        padding: .8rem;
+    }
+
+    
+    
+    .contact form .radioCheckbox .radioes{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        background: var(--bg-color);
+        margin-bottom: .8rem;
+        border: none;
+        border-radius: 5px;
+        padding: .1rem;
+        gap: 1rem;
+    }
+    
+    
+    .contact form .radioCheckbox .checkboxes input, .contact form .radioCheckbox .radioes input{
+        margin: .5rem;
+        width: 10px;
+        
+    }
+
+    .contact form .radioCheckbox .checkboxes input[type="checkbox"]{
+        height: 15px;
+        width: 15px;
+        margin-left: 1rem;
+        
+    }
+
+    .contact form .radioCheckbox .radioes input[type="radio"]{
+        height: 30px;
+        width: 30px; 
+    }
+
+    .contact form .radioCheckbox .checkboxes label:nth-child(3){
+        margin-left: 10rem;
+    }
+    .contact form .radioCheckbox .radioes input:nth-child(3){
+        margin-left: 6rem;
+    }
+
+    .contact form .radioCheckbox .radioes label{
+        margin-left: -12px;
+    }
+    .contact form .radioCheckbox .checkboxes label:nth-child(1){
+        margin-left: -5px;
+    }
+
+    
+    .contact form textarea{
+        resize: none;
+    }
+
+    .formBtn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .formBtn .btn{
+        cursor: pointer;
+        font-size: 1rem;
+    }
 
 /* keyframes */
 @keyframes morph{

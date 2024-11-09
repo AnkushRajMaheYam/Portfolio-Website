@@ -122,4 +122,4 @@ const sentences = [
 
    // mix it up portfolio section 
 
-   var mixer = mixitup('.portfolio-gallery'); //fix it it not working
+   var mixer = mixitup('.portfolio-gallery'); 
