@@ -1214,3 +1214,61 @@ footer a i{
 
     }
 }
+
+
+
+@media (max-width:730px) {
+    .logo{
+        display:none ;
+    }
+
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-content{
+        margin-top: 2rem;
+    }
+
+    .home-image{
+        width: 100%;
+        margin-top: -15rem;
+        margin-bottom: 15rem;
+    }
+
+    .img-box img{
+        width: 180%;
+        left: -30px;
+        top: 10rem;
+    }
+    
+    .liquid-shape{
+        width: 170%;
+        height: 170%;
+        left: -30px;
+        top: 10rem;   
+    }
+    
+    .social-icons{
+        position: relative;
+        left: 0rem;
+        top: 11rem;
+        width: 63%;
+        height: auto;
+        gap: 1rem;
+    
+    }
+
+    .social-icons a{
+        width: 100%;
+        padding: 0.5rem 2rem;
+        margin: 0 1rem;
+    
+
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+}
