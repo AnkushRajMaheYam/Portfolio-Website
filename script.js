@@ -147,3 +147,78 @@ const header = document.querySelector("header");
 window.addEventListener("scroll", function(){
   header.classList.toggle("sticky", window.scrollY > 50)
 })
+
+// Hamburger menu functionality
+const menuIcon = document.getElementById('menu-icon');
+const navList = document.querySelector('.navlist');
+
+menuIcon.addEventListener('click', () => {
+  navList.classList.toggle('open');
+});
+
+// Close menu when clicking outside (optional for better UX)
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 900) {
+    if (!navList.contains(e.target) && !menuIcon.contains(e.target)) {
+      navList.classList.remove('open');
+    }
+  }
+});
+
+
+// Skill bar animation only when skill section is in view
+function animateSkillCircles() {
+  const skillSection = document.querySelector('.skills');
+  const circles = document.querySelectorAll('.circle');
+  const sectionTop = skillSection.getBoundingClientRect().top;
+  const sectionBottom = skillSection.getBoundingClientRect().bottom;
+  const windowHeight = window.innerHeight;
+  if (sectionTop < windowHeight && sectionBottom > 0) {
+    circles.forEach(elem => {
+      if (!elem.classList.contains('animated')) {
+        var dots = elem.getAttribute('data-dots');
+        var marked = elem.getAttribute('data-percent');
+        var percent = Math.floor(dots * marked / 100);
+        var points = '';
+        var rotate = 360 / dots;
+        for (let i = 0; i < dots; i++) {
+          points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
+        }
+        elem.innerHTML = points;
+        const pointsMarked = elem.querySelectorAll('.points');
+        for (let i = 0; i < percent; i++) {
+          pointsMarked[i].classList.add('marked');
+        }
+        elem.classList.add('animated');
+      }
+    });
+  }
+}
+window.addEventListener('scroll', animateSkillCircles);
+window.addEventListener('load', animateSkillCircles);
+
+// Animate horizontal skill bars only when skill section is in view
+function animateSkillBars() {
+  const skillSection = document.querySelector('.skills');
+  const bars = document.querySelectorAll('.skill-bar .bar span');
+  const sectionTop = skillSection.getBoundingClientRect().top;
+  const sectionBottom = skillSection.getBoundingClientRect().bottom;
+  const windowHeight = window.innerHeight;
+  if (sectionTop < windowHeight && sectionBottom > 0) {
+    bars.forEach(bar => {
+      if (!bar.classList.contains('animated')) {
+        bar.style.width = bar.getAttribute('data-width') || bar.style.width;
+        bar.classList.add('animated');
+      }
+    });
+  }
+}
+window.addEventListener('scroll', animateSkillBars);
+window.addEventListener('load', animateSkillBars);
+
+// Footer: Set current year automatically
+const footerCopyright = document.getElementById('footer-copyright');
+if (footerCopyright) {
+  const year = new Date().getFullYear();
+  footerCopyright.textContent = `© ${year} by Ankush Raj Mahe Yam || All Rights Reserved.`;
+}
