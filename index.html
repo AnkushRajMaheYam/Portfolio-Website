@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -462,7 +462,7 @@
 
           <div class="port-box mix products all">
             <div class="port-image">
-              <img src="./Assets/3.jpg" alt="Ankush's Latest Projects Jpg1" />
+              <img src="./Assets/3.png" alt="Ankush's Latest Projects Jpg1" />
             </div>
             <div class="port-content">
               <h3>Graphic Designer</h3>
@@ -492,7 +492,7 @@
 
           <div class="port-box mix products all">
             <div class="port-image">
-              <img src="./Assets/6.jpg" alt="Ankush's Latest Projects Jpg1" />
+              <img src="./Assets/6.png" alt="Ankush's Latest Projects Jpg1" />
             </div>
             <div class="port-content">
               <h3>Digital content</h3>
@@ -507,7 +507,7 @@
 
           <div class="port-box mix web all">
             <div class="port-image">
-              <img src="./Assets/kurta-selling-website.png" alt="Ankush's Latest Projects Jpg1" />
+              <img src="./Assets/kurta-selling-website.jpg" alt="Ankush's Latest Projects Jpg1" />
             </div>
             <div class="port-content">
               <h3>eCommerce Website</h3>
@@ -522,7 +522,7 @@
 
           <div class="port-box mix web all">
             <div class="port-image">
-              <img src="./Assets/tech village banner 3.jpg" alt="Ankush's Latest Projects Jpg1" />
+              <img src="./Assets/tech village banner 3.png" alt="Ankush's Latest Projects Jpg1" />
             </div>
             <div class="port-content">
               <h3>Graphic Designer</h3>
@@ -577,10 +577,10 @@
         <h2>Contact Me</h2>
       </div>
 
-      <form action="contactme.php" method="post">
+  <form id="contactForm" action="contactme.php" method="post" novalidate>
         <input type="text" name="name"  placeholder="Company's HR Name" required/>
         <input type="email" name="email"  placeholder="Company Email" required/>
-        <input type="tel" name="phone"  placeholder="Company Contact-no" required/>
+  <input type="tel" name="phone"  placeholder="Company Contact-no" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number"/>
         <input type="text" name="address"  placeholder="Job Location" required/>
 
           <div class="checkboxes">
@@ -641,6 +641,47 @@
     </footer>
     <script src="mixitup.min.js"></script>
     <script src="script.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  var form = e.target;
+  var phone = form.phone.value.trim();
+  var name = form.name.value.trim();
+  var email = form.email.value.trim();
+  var address = form.address.value.trim();
+  var company = form.company.value;
+  var companyNameInput = document.getElementById('companyNameInput');
+  var companyName = companyNameInput ? companyNameInput.value.trim() : '';
+  var message = form.message.value.trim();
+
+  // Validate phone
+  if (!/^\d{10}$/.test(phone)) {
+    alert('Please enter a valid 10-digit phone number.');
+    form.phone.focus();
+    e.preventDefault();
+    return false;
+  }
+  // Validate required fields
+  if (!name || !email || !address || !message) {
+    alert('Please fill in all required fields.');
+    e.preventDefault();
+    return false;
+  }
+  // Validate company selection
+  if (!company) {
+    alert('Please select your company.');
+    form.company.focus();
+    e.preventDefault();
+    return false;
+  }
+  // If "Others" is selected, companyName must be filled
+  if (company === 'others' && !companyName) {
+    alert('Please enter your company name.');
+    companyNameInput.focus();
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
     <script>
 document.getElementById('company-select').addEventListener('change', function() {
   var input = document.getElementById('companyNameInput');
