@@ -1032,7 +1032,7 @@ footer a i{
 /* =================================================================== */
 /*                      RESPONSIVE DESIGN (TABLET)                     */
 /* =================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     :root {
         --big-font: 2.2rem;
         --norm-font: 1.8rem;
@@ -1131,7 +1131,7 @@ footer a i{
 /* =================================================================== */
 
 
-@media (max-width: 830px) {
+@media (max-width: 1024px) {
     :root {
         --big-font: 2.2rem;
         --norm-font: 1.8rem;
@@ -1187,7 +1187,7 @@ footer a i{
 /* =================================================================== */
 /*                      RESPONSIVE DESIGN (MOBILE)                     */
 /* =================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     :root {
         --big-font: 1.8rem;
         --norm-font: 1.5rem;
@@ -1197,7 +1197,12 @@ footer a i{
 
 
 
+
     
+.logo{
+    display: block;
+}
+
 
  
 
@@ -1233,6 +1238,9 @@ footer a i{
         display: block;
         margin: 10px 0;
     }
+
+
+
 
     .home{
         max-width: 90%;
@@ -1340,7 +1348,7 @@ footer a i{
 /* =================================================================== */
 /*                      RESPONSIVE DESIGN(MOBILE 2)                     */
 /* =================================================================== */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     :root {
         --big-font: 0.5rem;
         --norm-font: 0.5rem;
